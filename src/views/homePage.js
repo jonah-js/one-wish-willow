@@ -1,4 +1,4 @@
-﻿import { renderLayout } from "./layout.js";
+import { renderLayout } from "./layout.js";
 
 export function renderHomePage() {
   const structuredData = {
@@ -17,6 +17,7 @@ export function renderHomePage() {
         ],
         "description": "The authentic One Wish Willow chocolate bar and screen-accurate replica prop featured in Curry Barker's horror thriller 'Obsession', starring Inde Navarrette as Nikki ('A sweet treat for your wish - You only get one wish!'). Complete boxed set with reconnectable wish stick and vintage packaging.",
         "image": [
+          "https://onewishwillow.com/assets/one-wish-willow-box-hands.jpg",
           "https://onewishwillow.com/assets/inde-navarrette-obsession-chocolate.jpg",
           "https://onewishwillow.com/assets/product-cinematic.png",
           "https://onewishwillow.com/assets/product-lifestyle.png",
@@ -118,14 +119,119 @@ export function renderHomePage() {
 
   const body = `
     <main id="top">
-      <!-- TOP SPOTLIGHT: Inde Navarrette holding the One Wish Willow in Obsession -->
-      <section class="film-spotlight reveal" data-reveal="hero" aria-label="As Featured in the Film Obsession">
+      <!-- TOP SHOP HERO: E-Commerce Product Showcase with Screen-Accurate Prop Held in Hands -->
+      <section class="shop-hero reveal" data-reveal="hero" aria-label="One Wish Willow Prop Shop">
+        <div class="shop-hero-grid">
+          <!-- Left Column: Product Showcase with user's uploaded hands-holding-box image at the very top -->
+          <div class="shop-hero-media">
+            <div class="shop-badge-pill">
+              <span class="pulse-dot"></span>
+              <span>Screen-Accurate Prop · As Seen in <strong>Obsession</strong></span>
+            </div>
+            <div class="shop-main-frame">
+              <img id="heroProductImage" 
+                   src="/assets/one-wish-willow-box-hands.jpg" 
+                   alt="One Wish Willow vintage packaging held in hands from Curry Barker's film Obsession"
+                   fetchpriority="high"
+                   loading="eager"
+                   width="1280"
+                   height="600">
+              <span class="shop-media-tag">Collector Replica Prop</span>
+            </div>
+            <div class="shop-thumbs-row" aria-label="Product image previews">
+              <button class="thumb is-active" type="button" data-hero-image="/assets/one-wish-willow-box-hands.jpg" aria-label="Prop packaging in hands">
+                <img src="/assets/one-wish-willow-box-hands.jpg" alt="Vintage packaging in hands">
+              </button>
+              <button class="thumb" type="button" data-hero-image="/assets/product-cinematic.png" aria-label="Cinematic stick and box view">
+                <img src="/assets/product-cinematic.png" alt="Prop stick and box">
+              </button>
+              <button class="thumb" type="button" data-hero-image="/assets/inde-navarrette-obsession-chocolate.jpg" aria-label="Inde Navarrette holding chocolate bar">
+                <img src="/assets/inde-navarrette-obsession-chocolate.jpg" alt="Inde Navarrette in Obsession">
+              </button>
+              <button class="thumb" type="button" data-hero-image="/assets/product-lifestyle.png" aria-label="Atmospheric lifestyle display">
+                <img src="/assets/product-lifestyle.png" alt="Lifestyle scene">
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: High-Converting E-Commerce Buy Card -->
+          <div class="shop-hero-buy">
+            <div class="shop-meta-strip">
+              <div class="shop-rating" aria-label="Rated 4.9 out of 5 stars">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <strong>4.9/5</strong>
+                <span class="review-count">(184 Reviews)</span>
+              </div>
+              <span class="stock-indicator in-stock">
+                <span class="stock-dot"></span> In Stock &amp; Ready to Ship
+              </span>
+            </div>
+
+            <p class="shop-eyebrow">From Curry Barker's „Obsession“ · TABI Cat Curiosities</p>
+            <h1 class="shop-product-title">One Wish <em>Willow™</em></h1>
+            <p class="shop-product-subtitle">The legendary screen-accurate chocolate bar &amp; occult prop stick from the 2026 psychological horror phenomenon <strong>Obsession</strong>.</p>
+            
+            <p class="shop-prop-slogan">“A sweet treat for your wish — You only get one wish!”</p>
+
+            <div class="shop-pricing-box">
+              <div class="price-row">
+                <span class="price-current" data-price-main>$26</span>
+                <s class="price-regular">$32</s>
+                <span class="price-badge-save">SAVE 19%</span>
+              </div>
+              <p class="price-caption">Complete Collector's Boxed Set · Worldwide Delivery</p>
+            </div>
+
+            <div class="shop-inclusions">
+              <span class="inclusions-heading">What's in the box:</span>
+              <ul class="inclusions-list">
+                <li><span class="check-icon">✓</span> Screen-accurate vintage triangular candy box (TABI Cat Curiosities)</li>
+                <li><span class="check-icon">✓</span> Two-piece reconnectable matte black willow stick</li>
+                <li><span class="check-icon">✓</span> Certificate of authenticity with the 4 sacred wishing rules</li>
+              </ul>
+            </div>
+
+            <div class="shop-actions">
+              <a class="button primary shop-buy-btn" data-buy-link href="https://buy.stripe.com/dRmbJ0aea2bYbXleyz9IQ05">
+                <svg class="cart-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Order Boxed Set Now ($26)</span>
+              </a>
+              <a class="button secondary" href="/product">Product Specs &amp; Details</a>
+            </div>
+
+            <div class="shop-trust-badges">
+              <div class="trust-item">
+                <span class="trust-icon">🔒</span>
+                <span>Stripe Secure Checkout</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon">✈</span>
+                <span>Worldwide Tracked Shipping</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon">↺</span>
+                <span>30-Day Guarantee</span>
+              </div>
+            </div>
+
+            <div class="shop-payment-icons" aria-label="Accepted payment methods">
+              <span class="pay-chip">Visa</span>
+              <span class="pay-chip">Mastercard</span>
+              <span class="pay-chip">Amex</span>
+              <span class="pay-chip">Apple Pay</span>
+              <span class="pay-chip">Google Pay</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILM TIE-IN SPOTLIGHT: Inde Navarrette holding the One Wish Willow in Obsession -->
+      <section class="film-spotlight reveal" aria-label="As Featured in the Film Obsession">
         <div class="spotlight-frame">
           <div class="spotlight-image-wrap">
             <img src="/assets/inde-navarrette-obsession-chocolate.jpg"
                  alt="Inde Navarrette as Nikki holding the One Wish Willow Chocolate Bar in Curry Barker's film Obsession"
-                 fetchpriority="high"
-                 loading="eager"
+                 loading="lazy"
                  width="1280"
                  height="720">
             <div class="spotlight-overlay" aria-hidden="true"></div>
@@ -135,32 +241,9 @@ export function renderHomePage() {
             </div>
             <div class="spotlight-caption">
               <p class="spotlight-tagline">“A sweet treat for your wish — You only get one wish!”</p>
-              <a class="spotlight-link" href="/product">Explore the Prop &amp; Order &rarr;</a>
+              <a class="spotlight-link" href="/product">Explore the Prop Specs &rarr;</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="hero">
-        <a class="hero-media hero-media-link reveal" href="/product" data-reveal="hero" aria-label="View One Wish Willow product page">
-          <div class="hero-media-frame"></div>
-          <div class="hero-shimmer" aria-hidden="true"></div>
-          <img src="/assets/product-cinematic.png" alt="One Wish Willow prop stick and vintage packaging from the film Obsession">
-          <span class="media-link-label">View product</span>
-        </a>
-        <div class="hero-copy">
-          <p class="eyebrow reveal" data-reveal="hero">From Curry Barker's „Obsession“ · TABI Cat Curiosities</p>
-          <h1 class="reveal" data-reveal="hero">One Wish <em>Willow</em></h1>
-          <p class="lead reveal" data-reveal="hero">The legendary chocolate bar &amp; occult prop from the psychological horror hit <strong>Obsession</strong>. Inscribed with the unforgettable rule: <em>„A sweet treat for your wish – You only get one wish!“</em>. Separate the black willow stick, whisper your wish, and press the two halves back together.</p>
-          <div class="hero-actions reveal" data-reveal="hero">
-            <a class="button primary" href="/product">Claim Your Prop Set</a>
-            <a class="button secondary" href="#how-it-works">Learn the Ritual</a>
-          </div>
-          <dl class="trust-strip reveal" data-reveal="hero" aria-label="Product highlights">
-            <div><dt data-price-main>$26</dt><dd>Complete boxed set</dd></div>
-            <div><dt>Ships worldwide</dt><dd>International orders welcome</dd></div>
-            <div><dt>Secure checkout</dt><dd>Encrypted Stripe payment</dd></div>
-          </dl>
         </div>
       </section>
 

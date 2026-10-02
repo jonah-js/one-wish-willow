@@ -1,4 +1,4 @@
-﻿export function renderLayout({
+export function renderLayout({
   title,
   description,
   keywords,
@@ -23,6 +23,18 @@
   const headerContent = isStatusPage
     ? ""
     : `
+    <div class="store-announcement-bar" aria-label="Store Announcement">
+      <div class="announcement-content">
+        <span>✦ OFFICIAL FILM PROP STORE</span>
+        <span class="announcement-sep">·</span>
+        <span>CURRY BARKER'S OBSESSION</span>
+        <span class="announcement-sep">·</span>
+        <span>WORLDWIDE TRACKED SHIPPING</span>
+        <span class="announcement-sep">·</span>
+        <span>STRIPE SECURE</span>
+      </div>
+    </div>
+
     <aside class="discount-banner" id="discountBanner" hidden aria-label="Limited time offer">
       <span class="discount-badge">15% off</span>
       <span class="discount-copy">Your wish price ends in</span>
@@ -35,7 +47,7 @@
         <span>One Wish Willow</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="/product">Product</a>
+        <a href="/product">Shop Prop</a>
         <a href="/#how-it-works">The Ritual</a>
         <a href="/#gallery">Gallery</a>
         <a href="/#faq">FAQ</a>
@@ -43,12 +55,13 @@
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-      <a class="nav-cta" href="/product">View Product</a>
+      <a class="nav-cta" href="/product" data-buy-link>Order Prop ($26)</a>
       <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
-        <a href="/product">Product</a>
+        <a href="/product">Shop Prop</a>
         <a href="/#how-it-works">The Ritual</a>
         <a href="/#gallery">Gallery</a>
         <a href="/#faq">FAQ</a>
+        <a class="button primary mobile-cta" href="/product" data-buy-link style="margin-top: 14px;">Order Prop ($26)</a>
       </nav>
     </header>
   `;

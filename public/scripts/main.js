@@ -10,15 +10,23 @@ document.querySelectorAll("[data-buy-link]").forEach((element) => {
 document.querySelectorAll(".thumb").forEach((button) => {
   button.addEventListener("click", (event) => {
     event.stopPropagation();
-    document.querySelectorAll(".thumb").forEach((thumb) => thumb.classList.remove("is-active"));
+    const container = button.closest(".shop-thumbs-row, .gallery-thumbs");
+    if (container) {
+      container.querySelectorAll(".thumb").forEach((thumb) => thumb.classList.remove("is-active"));
+    } else {
+      document.querySelectorAll(".thumb").forEach((thumb) => thumb.classList.remove("is-active"));
+    }
     button.classList.add("is-active");
-    const galleryImage = document.querySelector("#galleryImage");
-    if (!galleryImage) return;
 
-    galleryImage.classList.add("is-changing");
+    const targetImg = container?.closest(".shop-hero-media")?.querySelector("#heroProductImage") 
+      || document.querySelector("#galleryImage, #heroProductImage");
+    const newSrc = button.dataset.heroImage || button.dataset.image;
+    if (!targetImg || !newSrc) return;
+
+    targetImg.classList.add("is-changing");
     window.setTimeout(() => {
-      galleryImage.src = button.dataset.image;
-      galleryImage.classList.remove("is-changing");
+      targetImg.src = newSrc;
+      targetImg.classList.remove("is-changing");
     }, 180);
   });
 });

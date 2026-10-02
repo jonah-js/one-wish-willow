@@ -21,6 +21,11 @@ export function generateSitemapXml(baseUrl = "https://onewishwillow.com") {
       priority: "1.0",
       images: [
         {
+          loc: `${baseUrl}/assets/one-wish-willow-box-hands.jpg`,
+          title: "One Wish Willow Vintage Packaging Held in Hands - Official Prop from the Movie Obsession",
+          caption: "Screen-accurate One Wish Willow prop box as featured in Curry Barker's psychological thriller Obsession"
+        },
+        {
           loc: `${baseUrl}/assets/inde-navarrette-obsession-chocolate.jpg`,
           title: "Inde Navarrette holding the One Wish Willow Chocolate Bar in Curry Barker's film Obsession",
           caption: "The official screen-accurate One Wish Willow chocolate prop from the movie Obsession"
