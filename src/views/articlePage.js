@@ -100,6 +100,8 @@ export function renderArticlePage(slug) {
     description: article.metaDescription,
     keywords: article.keywords,
     canonical: `https://onewishwillow.com/stories/${article.slug}`,
+    image: article.image.startsWith("http") ? article.image : `https://onewishwillow.com${article.image}`,
+    imageAlt: article.title,
     structuredData,
     body
   });

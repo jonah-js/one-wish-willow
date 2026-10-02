@@ -23,7 +23,8 @@ const mimeTypes = {
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
   ".xml": "application/xml; charset=utf-8",
-  ".txt": "text/plain; charset=utf-8"
+  ".txt": "text/plain; charset=utf-8",
+  ".webmanifest": "application/manifest+json"
 };
 
 const staticRoutes = new Map([
@@ -75,18 +76,24 @@ createServer((req, res) => {
     return;
   }
 
-  // Dynamic XML Sitemap (Automatically includes all articles from articles.js)
+  // Dynamic XML Sitemap (Automatically includes all articles from articles.js, host-aware)
   if (pathname === "/sitemap.xml") {
-    const xml = generateSitemapXml();
+    const rawHost = req.headers["x-forwarded-host"] || req.headers.host || "onewishwillow.com";
+    const host = rawHost.split(",")[0].trim();
+    const proto = req.headers["x-forwarded-proto"] || (host.startsWith("localhost") || host.startsWith("127.0.0.1") ? "http" : "https");
+    const baseUrl = `${proto}://${host}`;
+    const xml = generateSitemapXml(baseUrl);
+    const buffer = Buffer.from(xml, "utf8");
     res.writeHead(200, {
       "Content-Type": "application/xml; charset=utf-8",
+      "Content-Length": buffer.length,
       "Cache-Control": "public, max-age=3600, must-revalidate"
     });
     if (req.method === "HEAD") {
       res.end();
       return;
     }
-    res.end(xml);
+    res.end(buffer);
     return;
   }
 

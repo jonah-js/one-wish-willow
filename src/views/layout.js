@@ -5,6 +5,8 @@ export function renderLayout({
   canonical,
   structuredData,
   body,
+  image,
+  imageAlt,
   noIndex = false,
   isStatusPage = false
 }) {
@@ -86,6 +88,9 @@ export function renderLayout({
 
   const bodyClass = isStatusPage ? 'class="center-page"' : "";
 
+  const ogImg = image || "https://onewishwillow.com/assets/one-wish-willow-box-hands.jpg";
+  const ogAlt = imageAlt || "One Wish Willow Prop Set from Curry Barker's Obsession";
+
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -97,22 +102,32 @@ export function renderLayout({
     ${robotsTag}
     ${canonicalTag}
 
-    <!-- Open Graph -->
+    <!-- Favicon & Mobile Touch Icons for Google Search Impressions & Browsers -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#30090d">
+    <meta name="msapplication-TileColor" content="#30090d">
+
+    <!-- Open Graph for Rich Social & Search Snippets -->
     <meta property="og:type" content="product">
-    <meta property="og:site_name" content="One Wish Willow | Obsession Movie Prop Shop">
+    <meta property="og:site_name" content="One Wish Willow | Obsession Prop Replica Shop">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:url" content="${canonical || "https://onewishwillow.com/"}">
-    <meta property="og:image" content="https://onewishwillow.com/assets/inde-navarrette-obsession-chocolate.jpg">
-    <meta property="og:image:alt" content="Inde Navarrette holding the One Wish Willow Chocolate Bar in Curry Barker's film Obsession">
+    <meta property="og:image" content="${ogImg}">
+    <meta property="og:image:alt" content="${ogAlt}">
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
-    <meta name="twitter:image" content="https://onewishwillow.com/assets/inde-navarrette-obsession-chocolate.jpg">
+    <meta name="twitter:image" content="${ogImg}">
 
-    <!-- Structured Data for Google SEO -->
+    <!-- Structured Data for Google SEO Rich Results -->
     ${jsonLdTag}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

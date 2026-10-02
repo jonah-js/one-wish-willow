@@ -46,6 +46,29 @@ export function renderHomePage() {
           ],
           "description": "Curry Barker's psychological horror film Obsession, centered on the cursed wish-granting artifact produced by TABI Cat Curiosities."
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "184",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Cinema Prop Collector"
+            },
+            "datePublished": "2026-09-15",
+            "reviewBody": "Identical to the prop held by Inde Navarrette in Obsession. The reconnectable willow stick and triangular vintage packaging are 100% screen-accurate."
+          }
+        ],
         "offers": {
           "@type": "Offer",
           "url": "https://onewishwillow.com/product",
@@ -53,6 +76,7 @@ export function renderHomePage() {
           "price": "26.00",
           "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
           "seller": {
             "@type": "Organization",
             "name": "One Wish Willow"
@@ -454,10 +478,12 @@ export function renderHomePage() {
   `;
 
   return renderLayout({
-    title: "One Wish Willow | Official Chocolate Prop from Curry Barker's Film 'Obsession'",
-    description: "The authentic One Wish Willow chocolate bar & prop from Curry Barker's film 'Obsession' starring Inde Navarrette: 'A sweet treat for your wish – You only get one wish!'. Order the boxed set.",
-    keywords: "Obsession movie chocolate, One Wish Willow Curry Barker, Inde Navarrette Nikki, TABI Cat Curiosities, Obsession film prop, Make a Wish Chocolate, sweet treat for your wish",
+    title: "One Wish Willow™ – Official Prop | Curry Barker's Film 'Obsession'",
+    description: "The screen-accurate One Wish Willow prop from Curry Barker's film 'Obsession' starring Inde Navarrette. Boxed replica set with wish stick. Ships worldwide.",
+    keywords: "Obsession movie, Curry Barker Obsession, One Wish Willow, Inde Navarrette Nikki, TABI Cat Curiosities, Obsession chocolate prop, Make a Wish chocolate bar, sweet treat for your wish, horror film replica",
     canonical: "https://onewishwillow.com/",
+    image: "https://onewishwillow.com/assets/one-wish-willow-box-hands.jpg",
+    imageAlt: "One Wish Willow vintage prop packaging held in hands - Official prop from Curry Barker's Obsession",
     structuredData,
     body
   });

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#54161c"/>
+      <stop offset="55%" stop-color="#30090d"/>
+      <stop offset="100%" stop-color="#180406"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf1d4"/>
+      <stop offset="35%" stop-color="#dfb476"/>
+      <stop offset="70%" stop-color="#b6833b"/>
+      <stop offset="100%" stop-color="#eec787"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#dfb476" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Square Icon Badge -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Gold Border -->
+  <rect x="22" y="22" width="468" height="468" rx="102" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-opacity="0.75"/>
+  <rect x="36" y="36" width="440" height="440" rx="90" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="10 7" stroke-opacity="0.5"/>
+  
+  <!-- Top Center Magic Spark Star -->
+  <path d="M 256 70 Q 256 102 272 102 Q 256 102 256 134 Q 256 102 240 102 Q 256 102 256 70 Z" fill="url(#goldGrad)"/>
+  <circle cx="190" cy="102" r="4" fill="#dfb476" opacity="0.8"/>
+  <circle cx="322" cy="102" r="4" fill="#dfb476" opacity="0.8"/>
+
+  <!-- Center Monogram: Elegant Intertwined 'O' and 'W' -->
+  <g filter="url(#glow)" fill="url(#goldGrad)">
+    <!-- O Ring with Calligraphic Thick/Thin Lines -->
+    <path d="M 180 162 C 122 162 86 210 86 272 C 86 334 122 382 180 382 C 238 382 274 334 274 272 C 274 210 238 162 180 162 Z M 180 204 C 205 204 224 235 224 272 C 224 309 205 340 180 340 C 155 340 136 309 136 272 C 136 235 155 204 180 204 Z"/>
+    
+    <!-- W Monogram -->
+    <path d="M 264 186 L 296 366 L 344 232 L 392 366 L 426 186 L 402 186 L 380 316 L 338 196 L 328 196 L 284 316 L 262 186 Z"/>
+  </g>
+
+  <!-- Bottom Tagline / Subtitle Ribbon -->
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" letter-spacing="10" fill="url(#goldGrad)" text-anchor="middle">ONE WISH</text>
+</svg>

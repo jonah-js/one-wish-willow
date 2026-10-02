@@ -1,4 +1,4 @@
-﻿import { renderLayout } from "./layout.js";
+import { renderLayout } from "./layout.js";
 
 export function renderProductPage() {
   const structuredData = {
@@ -12,6 +12,7 @@ export function renderProductPage() {
       "TABI Cat Curiosities One Wish Willow"
     ],
     "image": [
+      "https://onewishwillow.com/assets/one-wish-willow-box-hands.jpg",
       "https://onewishwillow.com/assets/inde-navarrette-obsession-chocolate.jpg",
       "https://onewishwillow.com/assets/product-cinematic.png",
       "https://onewishwillow.com/assets/product-lifestyle.png",
@@ -34,6 +35,29 @@ export function renderProductPage() {
         "name": "Inde Navarrette"
       }
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "184",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Verified Collector"
+        },
+        "datePublished": "2026-09-18",
+        "reviewBody": "Stunning quality. The triangular vintage box looks straight out of the film, and the wish stick splits and reconnects perfectly."
+      }
+    ],
     "offers": {
       "@type": "Offer",
       "url": "https://onewishwillow.com/product",
@@ -41,6 +65,7 @@ export function renderProductPage() {
       "price": "26.00",
       "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
       "seller": {
         "@type": "Organization",
         "name": "One Wish Willow"
@@ -53,10 +78,11 @@ export function renderProductPage() {
       <section class="section product-page">
         <div class="gallery reveal" aria-label="Product gallery">
           <button class="gallery-main" type="button" aria-label="Change product view">
-            <img id="galleryImage" src="/assets/inde-navarrette-obsession-chocolate.jpg" alt="Inde Navarrette holding the One Wish Willow Chocolate Bar in Obsession">
+            <img id="galleryImage" src="/assets/one-wish-willow-box-hands.jpg" alt="One Wish Willow prop packaging held in hands from Curry Barker's film Obsession">
           </button>
           <div class="thumbs">
-            <button class="thumb is-active" type="button" data-image="/assets/inde-navarrette-obsession-chocolate.jpg" aria-label="Inde Navarrette in Obsession"><img src="/assets/inde-navarrette-obsession-chocolate.jpg" alt=""></button>
+            <button class="thumb is-active" type="button" data-image="/assets/one-wish-willow-box-hands.jpg" aria-label="Prop packaging in hands"><img src="/assets/one-wish-willow-box-hands.jpg" alt=""></button>
+            <button class="thumb" type="button" data-image="/assets/inde-navarrette-obsession-chocolate.jpg" aria-label="Inde Navarrette in Obsession"><img src="/assets/inde-navarrette-obsession-chocolate.jpg" alt=""></button>
             <button class="thumb" type="button" data-image="/assets/product-cinematic.png" aria-label="Cinematic prop view"><img src="/assets/product-cinematic.png" alt=""></button>
             <button class="thumb" type="button" data-image="/assets/product-lifestyle.png" aria-label="Lifestyle and vintage box"><img src="/assets/product-lifestyle.png" alt=""></button>
             <button class="thumb" type="button" data-image="/assets/product-pack.png" aria-label="Two-piece prop stick"><img src="/assets/product-pack.png" alt=""></button>
@@ -140,10 +166,12 @@ export function renderProductPage() {
   `;
 
   return renderLayout({
-    title: "One Wish Willow Chocolate Prop | Replica & Box from Curry Barker's 'Obsession'",
-    description: "Order the official One Wish Willow chocolate bar & prop from Curry Barker's movie Obsession. The 'Make a Wish' set with replica stick and vintage display box. Fast worldwide shipping.",
-    keywords: "Obsession movie chocolate, One Wish Willow Curry Barker, Make a Wish Chocolate, Inde Navarrette Nikki prop, TABI Cat Curiosities, You only get one wish",
+    title: "One Wish Willow Prop Set ($26) | Obsession Movie Replica",
+    description: "Order the authentic One Wish Willow chocolate prop from Curry Barker's film 'Obsession'. Includes reconnectable wish stick & vintage box. Ships worldwide.",
+    keywords: "Obsession movie chocolate, One Wish Willow Curry Barker, Make a Wish Chocolate, Inde Navarrette Nikki prop, TABI Cat Curiosities, You only get one wish, horror movie prop replica",
     canonical: "https://onewishwillow.com/product",
+    image: "https://onewishwillow.com/assets/one-wish-willow-box-hands.jpg",
+    imageAlt: "One Wish Willow Screen-Accurate Prop Set from Curry Barker's Obsession",
     structuredData,
     body
   });

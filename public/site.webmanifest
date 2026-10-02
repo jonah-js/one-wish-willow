@@ -1,0 +1,21 @@
+{
+  "name": "One Wish Willow - Obsession Movie Prop Shop",
+  "short_name": "One Wish Willow",
+  "description": "The official screen-accurate One Wish Willow prop from Curry Barker's film Obsession.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#240a0d",
+  "theme_color": "#30090d",
+  "icons": [
+    {
+      "src": "/assets/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
